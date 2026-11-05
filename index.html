@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions League - Top Scorers</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ1CoweO1_yIvmMecTyutPjVgyotFS1UKX_VbLDtM-tfJAZfqGffUzveo&s=10" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .custom-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5); 
+            border-radius: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: rgba(59, 130, 246, 0.5); 
+            border-radius: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(59, 130, 246, 0.8); 
+        }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-white font-sans min-h-screen py-4 md:py-10 px-2 md:px-4">
+
+    <div class="max-w-7xl mx-auto bg-[#111827]/80 backdrop-blur-md rounded-xl md:rounded-2xl overflow-hidden shadow-2xl border border-blue-900/40">
+        
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-blue-950 via-[#0f172a] to-blue-950 px-4 md:px-6 py-4 md:py-6 border-b border-blue-800/40 flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Sarlavha -->
+            <div class="flex items-center gap-3 w-full md:w-auto justify-center md:justify-start text-center md:text-left">
+                <div class="w-3 h-3 md:w-4 md:h-4 bg-blue-500 rounded-full shrink-0 hidden sm:block"></div>
+                <h1 class="text-base md:text-2xl font-black tracking-wider uppercase bg-gradient-to-r from-blue-400 to-indigo-200 bg-clip-text text-transparent leading-tight flex flex-col md:block">
+                    <span>UEFA CHAMPIONS LEAGUE</span>
+                    <span class="text-xs md:text-2xl text-blue-300 md:text-inherit font-bold md:font-black tracking-widest mt-0.5 md:mt-0">
+                        <span class="hidden md:inline">• </span>TOP SCORERS
+                    </span>
+                </h1>
+            </div>
+            
+            <!-- Qidiruv inputi -->
+            <div class="w-full md:w-72">
+                <input type="text" id="input" placeholder="Игрока поиск..." class="w-full px-4 py-2 md:py-2.5 bg-gray-900/90 border border-blue-900/60 rounded-xl text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-all shadow-inner">
+            </div>
+        </div>
+
+        <!-- Table Container -->
+        <div class="overflow-x-auto custom-scroll">
+            <table class="w-full text-left border-collapse min-w-[1050px]">
+                <thead>
+                    <tr class="bg-blue-950/40 text-gray-400 text-[10px] md:text-xs uppercase tracking-wider border-b border-gray-800">
+                        <th class="py-3 md:py-4 px-3 md:px-4 text-center w-12 md:w-16">№</th>
+                        <th class="py-3 md:py-4 px-3 md:px-4">Игроки</th>
+                        <th class="py-3 md:py-4 px-3 md:px-4 text-center">Матчи</th>
+                        <th class="py-3 md:py-4 px-3 md:px-4 text-center text-blue-400 font-bold">Гол</th>
+                        <th class="py-3 md:py-4 px-3 md:px-4 text-center">Ассист</th>
+                        <th class="py-3 md:py-4 px-3 md:px-4 text-center">Голы правой ногой</th>
+                        <th class="py-3 md:py-4 px-3 md:px-4 text-center">Голы левой ногой</th>
+                        <th class="py-3 md:py-4 px-3 md:px-4 text-center">Голы головой</th>
+                        <th class="py-3 md:py-4 px-3 md:px-4 text-center">Гол + Ассист</th>
+                        <th class="py-3 md:py-4 px-3 md:px-4 text-center text-amber-400 font-bold" title="Het-trik">Хет-трик</th>
+                        <th class="py-3 md:py-4 px-3 md:px-4 text-center text-purple-400 font-bold" title="Poker">Покер</th>
+                        <th class="py-3 md:py-4 px-3 md:px-4 text-center text-emerald-400 font-bold" title="Penta-trik">Пента-трик</th>
+                        <th class="py-3 md:py-4 px-3 md:px-4 text-center text-rose-400 font-bold" title="Gol Pushkasha">Гол Пушкаша</th>
+                    </tr>
+                </thead>
+                <tbody id="wrapper" class="divide-y divide-gray-800/50 text-xs md:text-sm">
+                    
+                    <!-- 1-o'rin (Nezamov Akbar - 26 gol) -->
+                    <tr class="hover:bg-blue-900/20 transition-all bg-gradient-to-r from-yellow-500/10 via-transparent to-transparent">
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-black text-yellow-400 text-sm md:text-base">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 font-bold text-white flex items-center gap-2 md:gap-3 whitespace-nowrap player-name">
+                            <span class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-yellow-500/20 text-yellow-400 flex items-center justify-center font-bold text-[10px] md:text-xs border border-yellow-500/30">NA</span>
+                            Nezamov Akbar
+                            <span class="bg-yellow-500 text-black text-[9px] md:text-[10px] px-1.5 md:px-2 py-0.5 rounded-full font-extrabold uppercase tracking-wide">TOP</span>
+                        </td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">19</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-black text-blue-400 text-base md:text-lg">26</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">6</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">24</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">2</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-semibold text-gray-200">26 + 6</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-amber-400">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-purple-400">2</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-emerald-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-rose-400">2</td>
+                    </tr>
+
+                    <!-- 2-o'rin (Anvarov Asadbek - 25 gol) -->
+                    <tr class="hover:bg-blue-900/20 transition-all bg-gradient-to-r from-gray-400/10 via-transparent to-transparent">
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-black text-gray-300 text-sm md:text-base">2</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 font-bold text-white flex items-center gap-2 md:gap-3 whitespace-nowrap player-name">
+                            <span class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gray-500/20 text-gray-300 flex items-center justify-center font-bold text-[10px] md:text-xs border border-gray-500/30">AA</span>
+                            Anvarov Asadbek
+                        </td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">15</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-black text-blue-400 text-base md:text-lg">25</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">11</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">24</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-semibold text-gray-200">25 + 11</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-amber-400">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-purple-400">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-emerald-400">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-rose-400">2</td>
+                    </tr>
+
+                    <!-- 3-o'rin (Abdufattoxo'v Abubakr - 21 gol) -->
+                    <tr class="hover:bg-blue-900/20 transition-all bg-gradient-to-r from-amber-600/10 via-transparent to-transparent">
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-black text-amber-600 text-sm md:text-base">3</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 font-bold text-white flex items-center gap-2 md:gap-3 whitespace-nowrap player-name">
+                            <span class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-amber-600/20 text-amber-500 flex items-center justify-center font-bold text-[10px] md:text-xs border border-amber-600/30">AA</span>
+                            Abdufattoxo'v Abubakr
+                        </td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">19</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-black text-blue-400 text-base md:text-lg">21</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">13</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">19</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-semibold text-gray-200">21 + 13</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-amber-400">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-purple-400">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-emerald-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-rose-400">1</td>
+                    </tr>
+
+                    <!-- 4-o'rin (Rahmatov Abduqahhor - 20 gol) -->
+                    <tr class="hover:bg-blue-900/20 transition-all">
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-gray-500">4</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 font-semibold text-white whitespace-nowrap player-name">Rahmatov Abduqahhor</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">15</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-white text-sm md:text-base">20</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">4</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">19</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-semibold text-gray-200">20 + 4</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-amber-400">4</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-purple-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-emerald-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-rose-400">0</td>
+                    </tr>
+
+                    <!-- 5-o'rin (Abdumannobov Javohir - 13 gol) -->
+                    <tr class="hover:bg-blue-900/20 transition-all">
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-gray-500">5</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 font-semibold text-white whitespace-nowrap player-name">Abdumannobov Javohir</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">13</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-white text-sm md:text-base">13</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">8</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">13</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-semibold text-gray-200">13 + 8</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-amber-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-purple-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-emerald-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-rose-400">0</td>
+                    </tr>
+
+                    <!-- 6-o'rin (Jo'rayev Nurulloh - 8 gol) -->
+                    <tr class="hover:bg-blue-900/20 transition-all">
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-gray-500">6</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 font-semibold text-white whitespace-nowrap player-name">Jo'rayev Nurulloh</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">15</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-white text-sm md:text-base">8</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">6</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">8</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-semibold text-gray-200">8 + 6</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-amber-400">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-purple-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-emerald-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-rose-400">0</td>
+                    </tr>
+
+                    <!-- 7-o'rin (Rahmatullayev Abdulaziz - 4 gol) -->
+                    <tr class="hover:bg-blue-900/20 transition-all">
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-gray-500">7</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 font-semibold text-white whitespace-nowrap player-name">Rahmatullayev Abdulaziz</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">11</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-white text-sm md:text-base">4</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">14</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">3</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-semibold text-gray-200">4 + 14</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-amber-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-purple-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-emerald-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-rose-400">0</td>
+                    </tr>
+
+                    <!-- 8-o'rin (Shuxratov Murod - 3 gol) -->
+                    <tr class="hover:bg-blue-900/20 transition-all">
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-gray-500">8</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 font-semibold text-white whitespace-nowrap player-name">Shuxratov Murod</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">14</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-white text-sm md:text-base">3</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">4</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">3</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-semibold text-gray-200">3 + 4</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-amber-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-purple-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-emerald-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-rose-400">0</td>
+                    </tr>
+
+                    <!-- 9-o'rin (Botirxo'jayev Axmadxo'ja - 2 gol) -->
+                    <tr class="hover:bg-blue-900/20 transition-all">
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-gray-500">9</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 font-semibold text-white whitespace-nowrap player-name">Botirxo'jayev Axmadxo'ja</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">14</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-white text-sm md:text-base">2</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">2</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-semibold text-gray-200">2 + 1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-amber-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-purple-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-emerald-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-rose-400">0</td>
+                    </tr>
+
+                    <!-- 10-o'rin (Alimov Sherzod - 1 gol) -->
+                    <tr class="hover:bg-blue-900/20 transition-all">
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-gray-500">10</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 font-semibold text-white whitespace-nowrap player-name">Alimov Sherzod</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">16</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-white text-sm md:text-base">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-semibold text-gray-200">1 + 1</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-amber-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-purple-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-emerald-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-rose-400">0</td>
+                    </tr>
+
+                    <!-- 11-o'rin (Rizayev Azim - 0 gol) -->
+                    <tr class="hover:bg-blue-900/20 transition-all">
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-gray-500">11</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 font-semibold text-white whitespace-nowrap player-name">Rizayev Azim</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">14</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-white text-sm md:text-base">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-semibold text-gray-200">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-amber-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-purple-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-emerald-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-rose-400">0</td>
+                    </tr>
+
+                    <!-- 12-o'rin (Toyirov Abdurashid - 0 gol) -->
+                    <tr class="hover:bg-blue-900/20 transition-all">
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-gray-500">12</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 font-semibold text-white whitespace-nowrap player-name">Toyirov Abdurashid</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">6</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-white text-sm md:text-base">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center text-gray-300 font-medium">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-semibold text-gray-200">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-amber-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-purple-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-emerald-400">0</td>
+                        <td class="py-3 md:py-4 px-3 md:px-4 text-center font-bold text-rose-400">0</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="bg-gray-900/50 px-4 md:px-6 py-3 border-t border-gray-800 text-[10px] md:text-xs text-gray-400 flex flex-col md:flex-row justify-between items-center gap-2">
+            <span>Статистика обновлена в реальном времени</span>
+            <span class="text-blue-400 font-medium">UEFA Official Stats Style</span>
+        </div>
+    </div>
+
+    <script>
+        const input = document.getElementById('input');
+        const rows = document.querySelectorAll('#wrapper tr');
+
+        input.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+
+            rows.forEach(row => {
+                const nameElement = row.querySelector('.player-name');
+                if (nameElement) {
+                    const name = nameElement.textContent.toLowerCase();
+                    if (name.includes(query)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
